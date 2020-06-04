@@ -28,7 +28,18 @@ const Actors = {
                 .catch( err => {
                     throw new Error( err );
                 });
+    },
+    getActorByName : function(fname, lname){
+        return actorsCollection
+                .findOne({firstName:fname},{lastName:lname})
+                .then (actor => {
+                    return actor;
+                })
+                .catch(err => {
+                    throw new Error(err);
+                })
     }
+
     /*
         Your code goes here
     */
